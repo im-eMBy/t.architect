@@ -1,0 +1,25 @@
+@import "./variables";
+
+.back-button {
+    font-family: "Avenir Bold", sans-serif;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 26px;
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+    span {
+        align-self: flex-end;
+        height: 24px;
+        line-height: 1em;
+    }
+    &:hover {
+        svg path {
+            fill: $color-yellow;
+        }
+    }
+}

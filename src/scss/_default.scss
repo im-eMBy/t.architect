@@ -1,6 +1,8 @@
 body {
     font-family: "Avenir Regular", sans-serif;
     font-size: 14px;
+    overflow-x: hidden;
+    position: relative;
 }
 #app {
     min-height: 100vh;
@@ -46,10 +48,4 @@ button {
 }
 .default-paragraph {
     width: 300px;
-}
-.back-button {
-    font-family: "Avenir Bold", sans-serif;
-    font-size: 24px;
-    padding: 0.5em;
-    padding-top: 0;
 }

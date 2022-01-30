@@ -32,6 +32,13 @@ export const App = () => {
   const extractSingleProjectData = (id) => {
     return data.projects[id - 1]
   }
+  const extractAboutMeData = () => {
+    return {
+      text: data.aboutMe,
+      mail: data.mail,
+      phone: data.phone
+    }
+  }
 
   if (data === null) {
     return <div className="main__container-outer--loading">
@@ -39,7 +46,7 @@ export const App = () => {
     </div>
   }
   return <Router>
-    <Navigation logoUrl={data.navLogo.url} />
+    <Navigation />
     <div className='main__container-outer'>
       <Switch>
         <Route exact path="/">
@@ -55,7 +62,7 @@ export const App = () => {
           <Projects projectsData={extractInteriorsData()} isInteriors={true} />
         </Route>
         <Route exact path="/about">
-          <AboutMe />
+          <AboutMe data={extractAboutMeData()} />
         </Route>
       </Switch>
     </div>

@@ -1,20 +1,18 @@
+import ReactMarkdown from "react-markdown";
+
 import aboutMeImage from "../images/about-me.png";
 
-export const AboutMe = () => {
+export const AboutMe = ({ data }) => {
 
     return <div className="main__container-inner about-me__container">
         <div className="about-me__column about-me__column--first">
             <h1>About Me</h1>
             <p>Hi! I’m Tomek Jakubowski. I’m glad you’re here on my portfolio website. If you wanna work with me please don’t hesitate to contact me:</p>
-            <p>Mobile:<br /> (+48) xxx-xxx-xxx</p>
-            <p>Mail:<br /> jakubowszki@gmail.com</p>
+            <p>Mobile:<br />{data.phone}</p>
+            <p>Mail:<br />{data.mail}</p>
         </div>
         <div className="about-me__column about-me__column--second">
-            <p>I have a lot of professional experience and several victories in competitions. I am currently working full time in 22 architects in Warsaw. In his free time he designs interiors for individual clients. Hence, I strongly encourage you to familiarize yourself with my interior designs.</p>
-            <p>Personally, I am a very open-minded and outgoing person. Contact and cooperation is easy with me.</p>
-            <p>My interests are snowboarding, surfing, drawing and my bike.</p>
-            <p>I need to write something more about you because I feel like it makes more harmony in text. What do you think?</p>
-            <p>And maybe one more line. I think we can figure it out what you should write here. It will not be that hard I guess. A few more words.</p>
+            <ReactMarkdown>{data.text}</ReactMarkdown>
         </div>
         <div className="about-me__column about-me__column--third">
             <div className="about-me__image-container">

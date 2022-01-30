@@ -59,4 +59,24 @@
 }
 .navigation__hamburger-button{
     margin-right: 5%;
+    &:hover {
+        svg path {
+            transition-duration: 0.3s;
+            fill: $color-yellow;
+        }
+    }
+    &--open {
+        .hamburger--top {
+            transform-origin: 50% 10%;
+            transform: translateY(40%) rotate(45deg);
+        }
+        .hamburger--middle {
+            transform-origin: center;
+            transform: scale(0);
+        }
+        .hamburger--bottom {
+            transform-origin: 50% 90%;
+            transform: translateY(-40%) rotate(-45deg);
+        }
+    }
 }

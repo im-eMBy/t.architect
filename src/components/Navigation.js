@@ -1,7 +1,9 @@
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
-export const Navigation = ({ logoUrl }) => {
+import navLogo from "../images/nav-logo.png";
+
+export const Navigation = () => {
     const [hamburgerMenu, setHamburgerMenu] = useState(window.matchMedia("(max-width: 800px)").matches);
     const [menuOpen, setMenuOpen] = useState(false);
     const hamburgerElement = useRef(null);
@@ -20,7 +22,7 @@ export const Navigation = ({ logoUrl }) => {
     }
 
     return <nav className="navigation">
-        <Link className="navigation__logo-link" to="/"><img className="navigation__logo" src={`${logoUrl}`} alt="Navigation logo" /></Link>
+        <Link className="navigation__logo-link" to="/"><img className="navigation__logo" src={navLogo} alt="Navigation logo" /></Link>
         {hamburgerMenu ?
             <>
                 <button ref={hamburgerElement} className="navigation__hamburger-button" onClick={() => handleHamburgerClick()}>
@@ -31,10 +33,10 @@ export const Navigation = ({ logoUrl }) => {
                     </svg>
                 </button>
                 <ul className="navigation__mobile-list" style={menuOpen ? { left: "0", visibility: "visible" } : { left: "100%", visibility: "hidden" }}>
-                    <li className="navigation__element"><NavLink to="/projects">projects</NavLink></li>
-                    <li className="navigation__element"><NavLink to="/interiors">interiors</NavLink></li>
-                    <li className="navigation__element"><NavLink to="/awards">awards</NavLink></li>
-                    <li className="navigation__element"><NavLink to="/about">about&nbsp;me</NavLink></li>
+                    <li className="navigation__element"><NavLink to="/projects" onClick={() => handleHamburgerClick()}>projects</NavLink></li>
+                    <li className="navigation__element"><NavLink to="/interiors" onClick={() => handleHamburgerClick()}>interiors</NavLink></li>
+                    <li className="navigation__element"><NavLink to="/awards" onClick={() => handleHamburgerClick()}>awards</NavLink></li>
+                    <li className="navigation__element"><NavLink to="/about" onClick={() => handleHamburgerClick()}>about&nbsp;me</NavLink></li>
                 </ul>
             </>
             :

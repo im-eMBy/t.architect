@@ -1,0 +1,72 @@
+.projects__container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        gap: 30px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+.projects__paragraph {
+    h1 {
+        margin-top: 2em;
+    }
+    width: #{"max(300px, 35%)"};
+    @media (max-width: 1000px) {
+        width: 100%;
+        h1 {
+            margin-top: 0;
+        }
+    }
+}
+.projects__list {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    @media (max-width: 1000px) {
+        gap: 10px;
+        width: 100%;
+    }
+}
+.projects__thumbnail {
+    position: relative;
+    height: 0;
+    width: calc(33.33% - 13.4px);
+    padding-top: calc(33.33% - 13.4px);
+    @media (max-width: 1000px) {
+        width: calc(33.33% - 6.8px);
+        padding-top: calc(33.33% - 6.8px);
+    }
+    a {
+        display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    img{
+        width: 100%;
+    }
+}
+.projects__thumbnail-hover-element{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparentize($color: $color-black, $amount: 0.3);
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+    }
+}

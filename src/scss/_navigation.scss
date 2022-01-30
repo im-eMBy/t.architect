@@ -1,0 +1,41 @@
+.navigation {
+    font-size: 16px;
+    height: 100px;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// .loading-logo {
+//     margin-left: 10%;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 5px;
+//     span {
+//         font-size: 14px;
+//     }
+// }
+.navigation__logo-link {
+    height: 100%;
+    margin-left: 10%;
+}
+.navigation__logo {
+    height: 100%;
+}
+.navigation__list {
+    margin-right: 10%;
+    width: 40%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        padding: 0.5em;
+        &:hover {
+            color: $color-yellow;
+        }
+    }
+}

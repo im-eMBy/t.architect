@@ -8,6 +8,7 @@ export const Project = ({ getData }) => {
     const { id } = useParams();
     const projectData = getData(id);
 
+    const [currentPhoto, setCurrentPhoto] = useState(projectData.photos[0]);
     // const [isMediaLoaded, setIsMediaLoaded] = useState(false);
     // const mediaToLoad = projectData.photos.length;
     // const mediaLoaded = useRef(0);
@@ -18,8 +19,23 @@ export const Project = ({ getData }) => {
     //         setIsMediaLoaded(true);
     //     }
     // }, [mediaLoaded, mediaToLoad])
-
-    const [currentPhoto, setCurrentPhoto] = useState(projectData.photos[0]);
+    
+    const handleNextPhoto = () => {
+        const currentIndex = projectData.photos.findIndex(photo => photo.id === currentPhoto.id);
+        if (currentIndex >= projectData.photos.length - 1) {
+            setCurrentPhoto(projectData.photos[0]);
+            return
+        }
+        setCurrentPhoto(projectData.photos[currentIndex + 1]);
+    }
+    const handlePreviousPhoto = () => {
+        const currentIndex = projectData.photos.findIndex(photo => photo.id === currentPhoto.id);
+        if (currentIndex === 0) {
+            setCurrentPhoto(projectData.photos[projectData.photos.length - 1]);
+            return
+        }
+        setCurrentPhoto(projectData.photos[currentIndex - 1]);
+    }
 
     const getThumbnails = () => {
         return projectData.photos.map((photo, index) => {
@@ -29,26 +45,6 @@ export const Project = ({ getData }) => {
                     <span>{index < 9 ? `0${index + 1}.` : `${index + 1}.`}</span>
                 </div>
             </div>
-        })
-    }
-    const handleNextPhoto = () => {
-        setCurrentPhoto(prevPhoto => {
-            let currentIndex = projectData.photos.findIndex((element) => {
-                return element.id === prevPhoto.id
-            });
-            currentIndex++;
-            if (currentIndex >= projectData.photos.length) { currentIndex = 0 };
-            return projectData.photos[currentIndex]
-        })
-    }
-    const handlePreviousPhoto = () => {
-        setCurrentPhoto(prevPhoto => {
-            let currentIndex = projectData.photos.findIndex((element) => {
-                return element.id === prevPhoto.id
-            });
-            currentIndex--;
-            if (currentIndex < 0) { currentIndex = projectData.photos.length - 1 };
-            return projectData.photos[currentIndex]
         })
     }
 

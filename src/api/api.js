@@ -6,7 +6,6 @@ export const getAllData = (successCallback) => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         successCallback(data);
     })
     .catch(err => console.log(err))

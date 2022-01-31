@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer";
 import { MainPage } from "./pages/MainPage";
 import { Projects } from "./pages/Projects";
 import { Project } from "./pages/Project";
+import { Awards } from "./pages/Awards";
 import { AboutMe } from "./pages/AboutMe";
 import { Loading } from "./components/Loading";
 
@@ -60,6 +61,9 @@ export const App = () => {
         </Route>
         <Route exact path="/interiors">
           <Projects projectsData={extractInteriorsData()} isInteriors={true} />
+        </Route>
+        <Route exact path="/awards">
+          <Awards awardsData={data.awards} />
         </Route>
         <Route exact path="/about">
           <AboutMe data={extractAboutMeData()} />

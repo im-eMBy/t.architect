@@ -1,4 +1,4 @@
-# Recipe picker
+# T.Architect
 
 ## Live: [LIVE](http://t-architect.netlify.app)
 Note: 

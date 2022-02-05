@@ -21,6 +21,9 @@
             margin-top: 0.5em;
         }
     }
+    @media (max-width: 450px) {
+        width: 90%;
+    }
 }
 .project__description {
     p {
@@ -38,6 +41,9 @@
     }
     @media (max-width: 800px) {
         width: 75%;
+    }
+    @media (max-width: 450px) {
+        width: 90%;
     }
 }
 .project__current-photo {

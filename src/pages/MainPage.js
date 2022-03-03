@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-export const MainPage = ({ mainPageData }) => {
+export const MainPage = ({ data }) => {
+
     const getMainPageProjects = () => {
-        return mainPageData.map((project, index) => {
+        return data.map((project, index) => {
             return <div className={`main-page__project main-page__project${index + 1}`} key={project.id}>
                 <Link to={`/project/${project.id}`}>
                     <img className="main-page__img" src={project.coverPhoto.url} alt="Main page project" />

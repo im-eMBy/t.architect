@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-export const Projects = ({ projectsData, isInteriors = false }) => {
+export const Projects = ({ data, isInteriors = false }) => {
 
     const getProjects = () => {
-        return projectsData.map((project, index) => {
+        return data.map((project, index) => {
             return <div className="projects__thumbnail" key={project.id}>
                 <Link to={`/project/${project.id}`}>
                     <img src={project.coverPhoto.url} alt="Project thumbnail" />

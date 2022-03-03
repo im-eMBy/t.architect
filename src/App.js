@@ -51,19 +51,19 @@ export const App = () => {
     <div className='main__container-outer'>
       <Switch>
         <Route exact path="/">
-          <MainPage mainPageData={extractMainPageData()} />
+          <MainPage data={extractMainPageData()} />
         </Route>
         <Route path="/project/:id">
-          <Project getData={extractSingleProjectData} />
+          <Project data={extractSingleProjectData} />
         </Route>
         <Route exact path="/projects">
-          <Projects projectsData={extractProjectsData()} isInteriors={false} />
+          <Projects data={extractProjectsData()} isInteriors={false} />
         </Route>
         <Route exact path="/interiors">
-          <Projects projectsData={extractInteriorsData()} isInteriors={true} />
+          <Projects data={extractInteriorsData()} isInteriors={true} />
         </Route>
         <Route exact path="/awards">
-          <Awards awardsData={data.awards} />
+          <Awards data={data.awards} />
         </Route>
         <Route exact path="/about">
           <AboutMe data={extractAboutMeData()} />

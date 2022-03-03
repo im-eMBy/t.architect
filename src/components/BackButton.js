@@ -1,7 +1,5 @@
 import { useHistory } from "react-router-dom";
 
-import backIcon from "../images/back-icon.png";
-
 import "../scss/_back-button.scss";
 
 export const BackButton = () => {

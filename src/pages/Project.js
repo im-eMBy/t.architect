@@ -4,9 +4,9 @@ import ReactMarkdown from 'react-markdown';
 import { BackButton } from "../components/BackButton";
 import { Loading } from "../components/Loading";
 
-export const Project = ({ getData }) => {
+export const Project = ({ data }) => {
     const { id } = useParams();
-    const projectData = getData(id);
+    const projectData = data(id);
 
     const [currentPhoto, setCurrentPhoto] = useState(projectData.photos[0]);
     // const [isMediaLoaded, setIsMediaLoaded] = useState(false);

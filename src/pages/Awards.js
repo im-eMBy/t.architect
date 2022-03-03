@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 
-export const Awards = ({ awardsData }) => {
+export const Awards = ({ data }) => {
 
     const getAwards = () => {
-        return awardsData.map((award, i) => {
+        return data.map((award, i) => {
             return <span key={i}><Link to={`/project/${award.project}`}>{award.text}</Link></span>
         })
     }

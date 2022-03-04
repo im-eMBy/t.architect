@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ImageLoader } from "../components/ImageLoader";
 
 export const Projects = ({ data, isInteriors = false }) => {
 
@@ -6,7 +7,7 @@ export const Projects = ({ data, isInteriors = false }) => {
         return data.map((project, index) => {
             return <div className="projects__thumbnail" key={project.id}>
                 <Link to={`/project/${project.id}`}>
-                    <img src={project.coverPhoto.url} alt="Project thumbnail" />
+                    <ImageLoader imgSrc={project.coverPhoto.url} imgAlt="Project thumbnail" />
                     <div className="projects__thumbnail-hover-element">
                         <span>{index < 9 ? `0${index + 1}.` : `${index + 1}.`}</span>
                     </div>

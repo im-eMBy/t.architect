@@ -69,7 +69,7 @@
     width: calc(100% - 56px);
     padding-top: calc(100% - 56px);
     position: relative;
-    img {
+    .image__container {
         width: 100%;
         position: absolute;
         top: 0;
@@ -97,7 +97,7 @@
         width: calc(33.33% - 6.7px);
         padding-top: calc(33.33% - 6.7px);
     }
-    img {
+    .image__container {
         width: 100%;
         position: absolute;
         top: 0;

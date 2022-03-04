@@ -1,24 +1,14 @@
-import { useState, useCallback, useRef } from "react";
+import { useState } from "react";
 import { useParams } from "react-router";
 import ReactMarkdown from 'react-markdown';
 import { BackButton } from "../components/BackButton";
-import { Loading } from "../components/Loading";
+import { ImageLoader } from "../components/ImageLoader";
 
 export const Project = ({ data }) => {
     const { id } = useParams();
     const projectData = data(id);
 
     const [currentPhoto, setCurrentPhoto] = useState(projectData.photos[0]);
-    // const [isMediaLoaded, setIsMediaLoaded] = useState(false);
-    // const mediaToLoad = projectData.photos.length;
-    // const mediaLoaded = useRef(0);
-    // const loadingCallback = useCallback(() => {
-    //     ++mediaLoaded.current;
-    //     console.log(mediaLoaded.current);
-    //     if(mediaLoaded.current === mediaToLoad) {
-    //         setIsMediaLoaded(true);
-    //     }
-    // }, [mediaLoaded, mediaToLoad])
     
     const handleNextPhoto = () => {
         const currentIndex = projectData.photos.findIndex(photo => photo.id === currentPhoto.id);
@@ -40,7 +30,8 @@ export const Project = ({ data }) => {
     const getThumbnails = () => {
         return projectData.photos.map((photo, index) => {
             return <div className="project__photo-thumbnail-container" key={photo.id} onClick={() => setCurrentPhoto(photo)}>
-                <img src={photo.url} alt="Project gallery thumbnail" />
+                {/* <img src={photo.url} alt="Project gallery thumbnail" /> */}
+                <ImageLoader imgSrc={photo.url} imgAlt="Project gallery thumbnail" noLoader={true} />
                 <div className="project__thumbnail-hover-element">
                     <span>{index < 9 ? `0${index + 1}.` : `${index + 1}.`}</span>
                 </div>
@@ -64,7 +55,8 @@ export const Project = ({ data }) => {
                     </svg>
                 </button>
                 <div className="project__current-photo-container">
-                    <img src={currentPhoto.url} alt="Project gallery preview" />
+                    {/* <img src={currentPhoto.url} alt="Project gallery preview" /> */}
+                    <ImageLoader imgSrc={currentPhoto.url} imgAlt="Project gallery preview" />
                 </div>
                 <button onClick={handleNextPhoto}>
                     <svg width="50" height="48" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">

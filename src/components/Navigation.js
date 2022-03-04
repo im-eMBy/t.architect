@@ -48,7 +48,7 @@ export const Navigation = () => {
 
     return <nav className="navigation">
         <Link className="navigation__logo" to="/">
-            <svg width="169" height="79" viewBox="0 0 169 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 169 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="40" height="40" fill="#050708" />
                 <rect x="129" y="39" width="40" height="40" fill="#050708" />
                 <rect x="78" width="40" height="40" fill="#050708" />

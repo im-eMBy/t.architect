@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import { ImageLoader } from "../components/ImageLoader";
 
 import aboutMeImage from "../images/about-me.png";
 
@@ -16,7 +17,7 @@ export const AboutMe = ({ data }) => {
         </div>
         <div className="about-me__column about-me__column--third">
             <div className="about-me__image-container">
-                <img src={aboutMeImage} alt="Me" />
+                <ImageLoader imgSrc={aboutMeImage} imgAlt="Me" />
             </div>
             <div className="about-me__socials-container">
                 <a href="/">

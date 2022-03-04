@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ImageLoader } from "../components/ImageLoader";
 
 export const MainPage = ({ data }) => {
 
@@ -6,7 +7,8 @@ export const MainPage = ({ data }) => {
         return data.map((project, index) => {
             return <div className={`main-page__project main-page__project${index + 1}`} key={project.id}>
                 <Link to={`/project/${project.id}`}>
-                    <img className="main-page__img" src={project.coverPhoto.url} alt="Main page project" />
+                    {/* <img className="main-page__img" src={project.coverPhoto.url} alt="Main page project" /> */}
+                    <ImageLoader imgSrc={project.coverPhoto.url} imgAlt="Main page project" />
                     <div className="main-page__project-hover-element"><p>{project.longTitle}</p></div>
                 </Link>
             </div>

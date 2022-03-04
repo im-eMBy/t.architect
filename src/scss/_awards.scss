@@ -31,8 +31,10 @@
         font-weight: 600;
         line-height: 1.5em;
     }
-    a:hover {
-        color: $color-yellow;
+    @media (hover: hover) {
+        a:hover {
+            color: $color-yellow;
+        }
     }
     @media (max-width: 1000px) {
         align-items: center;

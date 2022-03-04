@@ -72,9 +72,11 @@
             transition-duration: 0.3s;
         }
     }
-    a:hover {
-        svg path {
-            fill: $color-yellow;
+    @media (hover: hover) {
+        a:hover {
+            svg path {
+                fill: $color-yellow;
+            }
         }
     }
 }

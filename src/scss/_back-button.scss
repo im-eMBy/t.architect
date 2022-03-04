@@ -17,9 +17,11 @@
         height: 24px;
         line-height: 1em;
     }
-    &:hover {
-        svg path {
-            fill: $color-yellow;
+    @media (hover: hover) {
+        &:hover {
+            svg path {
+                fill: $color-yellow;
+            }
         }
     }
 }

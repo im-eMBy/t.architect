@@ -2,7 +2,7 @@ html {
     overflow-x: hidden;
     font-family: "Avenir Regular", sans-serif;
     font-size: 14px;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
 body {
@@ -34,9 +34,8 @@ body {
 h1 {
     font-family: "Avenir Bold", sans-serif;
     font-size: 48px;
+    white-space: nowrap;
     &::after {
-        // content: "\00A0\25A0";
-        // font-size: 0.5em;
         content: "";
         width: 0.2em;
         height: 0.2em;
@@ -53,8 +52,10 @@ button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    &:hover {
-        color: $color-yellow;
+    @media (hover: hover) {
+        &:hover {
+            color: $color-yellow;
+        }
     }
 }
 .default-paragraph {
